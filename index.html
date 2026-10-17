@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gửi em, 20/10 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#b76e79;--ink:#6e4a52;--rib:linear-gradient(90deg,#d29a9c,#f6dacf 45%,#e9bab5 55%,#c4878d);color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font:400 16px/1.7 'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);overflow-x:hidden;background:linear-gradient(160deg,#fde6ea,#fff8f5 55%,#fadfe3)}
+.hand{font-family:'Dancing Script','Segoe Script',cursive}
+.bg i{position:fixed;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate;pointer-events:none}
+.bg i:nth-child(1){width:55vmax;height:55vmax;left:-14vmax;top:-16vmax;background:#ffc7d4}
+.bg i:nth-child(2){width:50vmax;height:50vmax;right:-14vmax;bottom:-16vmax;background:#f5d3c2;animation-delay:-9s}
+@keyframes drift{to{transform:translate(6vmax,4vmax) scale(1.12)}}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.stage{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;z-index:2;transition:opacity 1s,transform 1s,visibility 0s 1s}
+.stage.out{opacity:0;transform:scale(1.08);visibility:hidden;pointer-events:none}
+.lead{font-size:2rem;color:var(--rose);margin:0;transition:opacity .8s}
+.hint{font-size:14px;letter-spacing:.04em;color:#a87a82;margin:0;animation:pulse 2.6s ease-in-out infinite;transition:opacity .6s}
+.opened .hint,.opened .lead{opacity:0;animation:none}
+@keyframes pulse{50%{opacity:.45}}
+.scene{position:relative;width:300px;height:300px;perspective:900px;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+.scene:focus-visible{outline:2px dashed var(--rose);outline-offset:6px;border-radius:24px}
+.scene::before{content:"";position:absolute;left:50%;bottom:62px;width:200px;height:36px;margin-left:-100px;background:radial-gradient(ellipse,rgba(160,80,100,.3),transparent 70%);filter:blur(4px)}
+.beam{position:absolute;left:50%;top:14%;width:280px;height:280px;margin-left:-140px;border-radius:50%;background:radial-gradient(circle,rgba(255,246,220,.95),rgba(255,215,205,.45) 40%,transparent 68%);opacity:0;transition:opacity 1.2s .5s;pointer-events:none}
+.open .beam{opacity:1}
+.float{position:absolute;inset:0;transform-style:preserve-3d;animation:bob 4.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.cube{position:absolute;left:50%;top:52%;width:150px;height:110px;margin:-55px 0 0 -75px;transform-style:preserve-3d;animation:sway 8s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotateX(-24deg) rotateY(-38deg)}50%{transform:rotateX(-24deg) rotateY(-18deg)}}
+.body,.lid{position:absolute;transform-style:preserve-3d}
+.body{inset:0}
+.s{position:absolute;left:0;top:0;width:150px;height:110px;background:linear-gradient(180deg,#fbd5de,#f4b3c3);box-shadow:inset 0 0 24px rgba(255,255,255,.4)}
+.s::after{content:"";position:absolute;inset:0 auto 0 50%;width:26px;margin-left:-13px;background:var(--rib);box-shadow:0 0 6px rgba(120,60,70,.2)}
+.f{transform:translateZ(75px)}.b{transform:rotateY(180deg) translateZ(75px)}
+.r{transform:rotateY(90deg) translateZ(75px);filter:brightness(.93)}.l{transform:rotateY(-90deg) translateZ(75px);filter:brightness(.98)}
+.body .t,.body .u{height:150px;top:-20px;background:radial-gradient(circle,#fff8ea,#ffdccd 55%,#f6b4bf)}
+.body .t{top:-72px;transform:rotateX(90deg)}
+.body .u{top:32px;transform:rotateX(90deg)}
+.body .t::after,.body .u::after{display:none}
+.lid{left:-6px;top:-32px;width:162px;height:32px;transform-origin:50% 100% -81px;transition:transform 1.3s cubic-bezier(.3,1.25,.4,1)}
+.lid .s{width:162px;height:32px;background:linear-gradient(180deg,#fee3e8,#f8c4d0)}
+.lid .f{transform:translateZ(81px)}.lid .b{transform:rotateY(180deg) translateZ(81px)}
+.lid .r{transform:rotateY(90deg) translateZ(81px)}.lid .l{transform:rotateY(-90deg) translateZ(81px)}
+.lid .t{height:162px;top:-81px;transform:rotateX(90deg);background:radial-gradient(circle at 40% 35%,#fff0f3,#f9c9d4)}
+.lid .t::before{content:"";position:absolute;inset:50% 0 auto;height:26px;margin-top:-13px;background:linear-gradient(180deg,#d29a9c,#f6dacf 45%,#e9bab5 55%,#c4878d)}
+.scene:not(.open):hover .lid{transform:translateY(-6px) rotateX(9deg)}
+.scene.open .lid{transform:rotateX(122deg)}
+.bow{position:absolute;left:50%;top:0;width:0;height:0;transform-style:preserve-3d}
+.bow i{position:absolute;display:block;width:50px;height:34px;top:-31px;border-radius:60% 40% 55% 45%/70% 70% 30% 30%;background:radial-gradient(ellipse at 50% 75%,#fcdbe1,#ee9db0 75%);box-shadow:inset 0 -3px 6px rgba(178,90,112,.35),inset 0 2px 4px rgba(255,255,255,.7)}
+.bow .l1{left:-48px;transform:rotate(-24deg);transform-origin:100% 100%}
+.bow .l2{left:-2px;transform:rotate(24deg);transform-origin:0 100%}
+.bow .kn{width:20px;height:20px;left:-10px;top:-17px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff4ef,#e6a99f 60%,#c98b90)}
+.card-stage{position:fixed;inset:0;overflow:auto;display:flex;padding:24px 16px;z-index:3;opacity:0;visibility:hidden;transform:translateY(34px) scale(.96);transition:opacity 1.1s,transform 1.1s cubic-bezier(.2,.8,.2,1),visibility 0s 1.1s}
+.card-stage.show{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.card{margin:auto;width:100%;max-width:520px;padding:38px 32px 30px;border-radius:28px;border:1px solid transparent;background:linear-gradient(160deg,rgba(255,255,255,.94),rgba(255,244,243,.9)) padding-box,linear-gradient(135deg,#e6b3b6,#fff,#d8a28f) border-box;box-shadow:0 34px 60px -26px rgba(183,110,121,.5)}
+.eb{margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#b98a90}
+.hi{font-size:2.5rem;line-height:1.2;margin:6px 0 14px;background:linear-gradient(120deg,#b76e79,#e3ab9b 50%,#b76e79);-webkit-background-clip:text;background-clip:text;color:transparent}
+#msg{font-size:15.5px;line-height:1.9;cursor:default}
+#msg p{margin:0 0 1em}
+#msg span{opacity:0;transition:opacity .35s}
+#msg span.v{opacity:1}
+.caret{display:inline-block;width:2px;height:1.1em;margin-left:2px;vertical-align:-.15em;background:#c98b90;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.end{text-align:center;opacity:0;transform:translateY(10px);transition:opacity 1s,transform 1s;pointer-events:none}
+.done .end{opacity:1;transform:none;pointer-events:auto}
+.end svg{display:block;margin:6px auto 0;width:120px}
+.sg{font-size:1.9rem;color:var(--rose);margin:0}
+#again{margin-top:10px;border:1px solid #e3b7ba;background:rgba(255,255,255,.75);color:var(--rose);padding:8px 18px;border-radius:99px;font:inherit;font-size:13px;cursor:pointer;transition:background .3s}
+#again:hover{background:#fff0f2}
+#music{position:fixed;top:14px;right:14px;z-index:9;width:56px;height:56px;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;filter:drop-shadow(0 6px 10px rgba(120,60,70,.3))}
+.disc{display:block;width:100%;height:100%;border-radius:50%;position:relative;background:radial-gradient(circle,#f3cbc3 0 15%,#c98b90 15% 19%,#1f171b 19% 21%,transparent 21%),repeating-radial-gradient(circle,#2c2328 0 2px,#3d3036 2px 4px);animation:spin 3.4s linear infinite;animation-play-state:paused}
+.disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent,rgba(255,255,255,.28),transparent 25%,transparent 50%,rgba(255,255,255,.2) 62%,transparent 75%)}
+#music.on .disc{animation-play-state:running}
+#music.nudge{animation:pulse 1s 3}
+@keyframes spin{to{transform:rotate(360deg)}}
+#music:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+#note{position:fixed;left:50%;bottom:20px;z-index:9;transform:translate(-50%,20px);padding:9px 16px;border-radius:99px;background:rgba(255,255,255,.92);box-shadow:0 8px 24px -8px rgba(183,110,121,.5);font-size:13px;opacity:0;pointer-events:none;transition:.5s;max-width:92vw;text-align:center}
+#note.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#note a{color:var(--rose)}
+#yt{position:fixed;left:-300px;bottom:0;width:200px;height:200px;border:0;pointer-events:none}
+@media(max-width:480px){.scene{scale:.86}.lead{font-size:1.7rem}.card{padding:30px 22px 24px}.hi{font-size:2.15rem}#msg{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.cube,.float,.bg i{animation:none}.cube{transform:rotateX(-24deg) rotateY(-30deg)}}
+</style>
+</head>
+<body>
+<div class="bg"><i></i><i></i></div>
+<canvas id="fx"></canvas>
+<iframe id="yt" title="Nhạc nền" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"
+ src="https://www.youtube.com/embed/MtDik4dz3IA?enablejsapi=1&controls=0&loop=1&playlist=MtDik4dz3IA&playsinline=1&rel=0&modestbranding=1"></iframe>
+<button id="music" aria-label="Bật hoặc tắt nhạc" aria-pressed="false" title="Bật/tắt nhạc"><span class="disc"></span></button>
+<div id="note"></div>
+
+<section class="stage" id="stage1">
+  <p class="lead hand">Một món quà nhỏ dành cho em</p>
+  <div class="scene" id="gift" role="button" tabindex="0" aria-label="Nhấn vào hộp quà để mở">
+    <div class="beam"></div>
+    <div class="float"><div class="cube" id="cube"></div></div>
+  </div>
+  <p class="hint">Nhấn vào hộp quà để mở</p>
+</section>
+
+<section class="card-stage" id="stage2">
+  <article class="card" id="card">
+    <p class="eb">Ngày Phụ nữ Việt Nam 20/10</p>
+    <h1 class="hi hand">Gửi em,</h1>
+    <div id="msg" title="Nhấn để hiện nhanh toàn bộ lời chúc"></div>
+    <div class="end">
+      <svg viewBox="0 0 120 84" aria-hidden="true">
+        <defs><g id="fl"><g fill="#f6b9c6"><ellipse cy="-8" rx="5" ry="8"/><ellipse cy="-8" rx="5" ry="8" transform="rotate(72)"/><ellipse cy="-8" rx="5" ry="8" transform="rotate(144)"/><ellipse cy="-8" rx="5" ry="8" transform="rotate(216)"/><ellipse cy="-8" rx="5" ry="8" transform="rotate(288)"/></g><circle r="3.6" fill="#f0cfa8"/></g></defs>
+        <path d="M60 80V50M60 80C52 66 42 58 35 48M60 80C68 66 78 58 85 47" stroke="#b5c4b1" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="46" cy="64" rx="7" ry="3" fill="#c9d6c5" transform="rotate(-30 46 64)"/>
+        <use href="#fl" transform="translate(60 40)"/><use href="#fl" transform="translate(34 46) scale(.8)"/><use href="#fl" transform="translate(86 45) scale(.8)"/>
+        <path d="M50 76l10 6 10-6-10-5z" fill="#d29a9c"/>
+      </svg>
+      <p class="sg hand">Anh ♡</p>
+      <button id="again" type="button">↻ Phát lại lời chúc</button>
+    </div>
+  </article>
+</section>
+
+<script>
+const $=s=>document.querySelector(s),sleep=ms=>new Promise(r=>setTimeout(r,ms)),rnd=(a,b)=>a+Math.random()*(b-a);
+
+/* ---------- Hộp quà 3D ---------- */
+const faces=n=>n.map(c=>`<div class="s ${c}"></div>`).join('');
+$('#cube').innerHTML=`<div class="body">${faces(['f','b','r','l','t','u'])}</div><div class="lid">${faces(['f','b','r','l','t'])}<div class="bow"><i class="l1"></i><i class="l2"></i><i class="kn"></i></div></div>`;
+const bow=$('.bow'),bow2=bow.cloneNode(true);bow2.style.transform='rotateY(90deg)';bow.after(bow2);
+
+/* ---------- Hiệu ứng hạt (cánh hoa, trái tim, ánh sáng) ---------- */
+const cv=$('#fx'),cx=cv.getContext('2d'),calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W,H,P=[],last=0,ambT=0,spT=0;
+function size(){const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+addEventListener('resize',size);size();
+const cols=['#f6b9c6','#f9d3da','#eaa3b4','#f3c7bd','#fbe3e6'];
+function petalPath(s){cx.beginPath();cx.moveTo(0,-s);cx.bezierCurveTo(s*.9,-s*.6,s*.7,s*.7,0,s);cx.bezierCurveTo(-s*.7,s*.7,-s*.9,-s*.6,0,-s);cx.fill()}
+function heartPath(s){cx.beginPath();cx.moveTo(0,s*.35);cx.bezierCurveTo(-s*1.1,-s*.35,-s*.55,-s*1.05,0,-s*.4);cx.bezierCurveTo(s*.55,-s*1.05,s*1.1,-s*.35,0,s*.35);cx.fill()}
+function starPath(s){cx.beginPath();cx.moveTo(0,-s);cx.quadraticCurveTo(0,0,s,0);cx.quadraticCurveTo(0,0,0,s);cx.quadraticCurveTo(0,0,-s,0);cx.quadraticCurveTo(0,0,0,-s);cx.fill()}
+function frame(t){
+  const dt=Math.min((t-last)/1000,.05);last=t;cx.clearRect(0,0,W,H);
+  ambT-=dt;if(ambT<=0){ambT=rnd(.8,1.6)*(calm?2:1);if(P.filter(p=>p.amb).length<(W<600?9:16))
+    P.push({t:'p',amb:1,x:rnd(0,W),y:-20,s:rnd(6,11),vx:rnd(-8,8),vy:rnd(28,50),g:0,a:rnd(0,6.3),va:rnd(-1.1,1.1),ph:rnd(0,6.3),c:cols[(Math.random()*5)|0],al:rnd(.55,.85),life:1e9,max:0})}
+  spT-=dt;if(spT<=0){spT=rnd(.25,.6)*(calm?2:1);const l=rnd(1.4,2.4);P.push({t:'s',x:rnd(0,W),y:rnd(0,H),s:rnd(3,7),life:l,max:l,vx:0,vy:0,g:0,a:0,va:0,ph:0,al:1})}
+  for(let i=P.length-1;i>=0;i--){
+    const p=P[i];p.life-=dt;p.ph+=dt;p.a+=p.va*dt;p.vy+=p.g*dt;
+    if(!p.amb){p.vx*=.992}
+    p.x+=(p.vx+(p.amb||p.t==='p'?Math.sin(p.ph*1.3)*16:0))*dt;p.y+=p.vy*dt;
+    if(p.life<=0||p.y>H+30||p.x<-40||p.x>W+40){P.splice(i,1);continue}
+    const f=p.t==='s'?Math.sin(Math.PI*(1-p.life/p.max)):p.max?Math.min(1,p.life/p.max*2):1;
+    cx.save();cx.translate(p.x,p.y);
+    if(p.t==='s'){cx.fillStyle=`rgba(240,200,170,${f*.3})`;cx.beginPath();cx.arc(0,0,p.s*1.6,0,6.3);cx.fill();cx.rotate(.4);cx.fillStyle=`rgba(255,255,255,${f})`;starPath(p.s)}
+    else if(p.t==='d'){cx.fillStyle=`rgba(255,238,205,${f*.25})`;cx.beginPath();cx.arc(0,0,p.s*2.4,0,6.3);cx.fill();cx.fillStyle=`rgba(255,244,222,${f*.95})`;cx.beginPath();cx.arc(0,0,p.s,0,6.3);cx.fill()}
+    else{cx.globalAlpha=p.al*f;cx.fillStyle=p.c;cx.rotate(p.a);if(p.t==='p'){cx.scale(Math.abs(Math.cos(p.ph))*.5+.5,1);petalPath(p.s)}else heartPath(p.s)}
+    cx.restore();
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+function burst(){
+  const r=$('#cube').getBoundingClientRect(),ox=r.left+r.width/2,oy=r.top+r.height*.1;
+  for(let i=0;i<(W<600?44:62);i++){
+    const a=-Math.PI/2+rnd(-.95,.95),v=rnd(180,470),k=Math.random(),l=rnd(1.8,3.4);
+    P.push({t:k<.34?'h':k<.66?'p':'d',x:ox+rnd(-30,30),y:oy,vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:250,s:k<.66?rnd(7,13):rnd(1.5,3.5),a:rnd(0,6.3),va:rnd(-3,3),ph:rnd(0,6.3),c:k<.34?'#ec8fa5':cols[(Math.random()*5)|0],al:.9,life:l,max:l});
+  }
+}
+
+/* ---------- Nhạc YouTube (điều khiển qua postMessage) ---------- */
+const yt=$('#yt'),btn=$('#music'),note=$('#note'),VID='MtDik4dz3IA';
+let playing=false,ytMsgs=0,userPaused=false,noteTimer;
+const cmd=(fn,args=[])=>{try{yt.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args}),'*')}catch(e){};
+};
+const listen=()=>{try{yt.contentWindow.postMessage(JSON.stringify({event:'listening',id:1,channel:'widget'}),'*')}catch(e){};};
+function setPlay(v){playing=v;btn.classList.toggle('on',v);btn.setAttribute('aria-pressed',v);if(v)showNote('')}
+function showNote(html,ms){clearTimeout(noteTimer);note.innerHTML=html;note.classList.toggle('show',!!html);if(html&&ms)noteTimer=setTimeout(()=>note.classList.remove('show'),ms)}
+const ytLink=`<a href="https://www.youtube.com/watch?v=${VID}" target="_blank" rel="noopener">Mở bài hát trên YouTube</a>`;
+yt.addEventListener('load',()=>{listen();setTimeout(listen,1200)});
+addEventListener('message',e=>{
+  if(!/(^|\.)youtube(-nocookie)?\.com$/.test(new URL(e.origin).hostname))return;
+  let d;try{d=typeof e.data==='string'?JSON.parse(e.data):e.data}catch(_){return}
+  if(!d)return;ytMsgs++;
+  const st=d.event==='onStateChange'?d.info:(d.info&&d.info.playerState!==undefined?d.info.playerState:null);
+  if(st===1)setPlay(true);else if(st===2||st===0)setPlay(false);
+  if(d.event==='onError'){setPlay(false);showNote('Không thể phát nhạc nhúng. '+ytLink)}
+});
+function tryPlay(){
+  if(userPaused)return;
+  cmd('playVideo');setTimeout(()=>{if(!playing)cmd('playVideo')},900);
+  setTimeout(()=>{
+    if(playing||userPaused)return;
+    if(!ytMsgs){setPlay(true);return}       // không nhận được phản hồi từ player: tin vào lệnh đã gửi
+    btn.classList.add('nudge');showNote('Trình duyệt chặn tự phát nhạc. Nhấn vào đĩa than để bật nhạc 🎵 &nbsp;·&nbsp; '+ytLink,9000);
+  },2400);
+}
+btn.addEventListener('click',()=>{
+  btn.classList.remove('nudge');
+  if(playing){userPaused=true;cmd('pauseVideo');setPlay(false)}
+  else{userPaused=false;cmd('unMute');cmd('setVolume',[80]);cmd('playVideo');setPlay(true);
+    setTimeout(()=>{if(ytMsgs&&!playing&&!userPaused)showNote('Chưa phát được nhạc. '+ytLink,8000)},2500)}
+});
+
+/* ---------- Lời chúc (typewriter) ---------- */
+const T=['Chúc em 20/10 thật vui vẻ và hạnh phúc nhaaa ❤️ Anh mong em lúc nào cũng vui vẻ, luôn xinh đẹp theo cách của riêng em và gặp được thật nhiều điều tốt đẹp trong cuộc sống. Anh biết đôi khi anh không giỏi nói những lời ngọt ngào, nhưng anh thật sự rất trân trọng việc có em bên cạnh. Mong là không chỉ hôm nay mà cả những ngày bình thường sau này, anh vẫn có thể ở cạnh em, cùng em trải qua những niềm vui, những lúc buồn và cả những chuyện nhỏ nhặt nhất trong cuộc sống.',
+'Cảm ơn em vì đã xuất hiện và trở thành một phần đặc biệt trong cuộc sống của anh. Thương em nhiều lắm, cô gái của anh. Chúc em một ngày 20/10 thật đáng nhớ nhaaa 🫶🏻❤️'];
+const seg=s=>window.Intl&&Intl.Segmenter?[...new Intl.Segmenter('vi',{granularity:'grapheme'}).segment(s)].map(x=>x.segment):Array.from(s);
+const msg=$('#msg'),caret=document.createElement('i'),units=[];
+caret.className='caret';
+T.forEach(t=>{const p=document.createElement('p');seg(t).forEach((g,i,a)=>{const s=document.createElement('span');s.textContent=g;if(i===a.length-1)s.dataset.e=1;p.append(s);units.push(s)});msg.append(p)});
+let run=0,skip=false;
+async function type(){
+  const id=++run;skip=false;$('#card').classList.remove('done');units.forEach(u=>u.classList.remove('v'));
+  await sleep(500);
+  for(const u of units){
+    if(id!==run)return;
+    u.classList.add('v');u.after(caret);
+    if(skip)continue;
+    const g=u.textContent;let d=36;
+    if(/[.!?]/.test(g))d=380;else if(g===',')d=190;else if(g===' ')d=48;
+    if(u.dataset.e)d=750;
+    await sleep(d);
+  }
+  if(id===run){caret.remove();$('#card').classList.add('done')}
+}
+msg.addEventListener('click',()=>{skip=true});
+$('#again').addEventListener('click',type);
+
+/* ---------- Mở quà: nắp mở → hạt bay → chuyển cảnh → thiệp → đánh máy ---------- */
+let opened=false;
+async function openGift(){
+  if(opened)return;opened=true;
+  const g=$('#gift');g.classList.add('open');$('#stage1').classList.add('opened');
+  tryPlay();
+  await sleep(750);burst();
+  await sleep(1400);$('#stage1').classList.add('out');
+  await sleep(800);$('#stage2').classList.add('show');
+  await sleep(1000);type();
+}
+$('#gift').addEventListener('click',openGift);
+$('#gift').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGift()}});
+</script>
+</body>
+</html>
